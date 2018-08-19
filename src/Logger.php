@@ -92,9 +92,7 @@ class Logger extends AbstractLogger
      */	
 	public function setFile($file)
 	{
-		if (!file_exists($file)) {
-			$this->customFile = $file;
-		}	
+		$this->customFile = $file;
 	}	
     /**
      * Write the log message in files.
