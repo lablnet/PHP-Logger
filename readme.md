@@ -31,3 +31,5 @@ run this command
 - notice => ```$logger->notice(msg,[context])```
 - info => ```$logger->info(msg,[context])```
 - debug => ```$logger->debug(msg,[context])```
+
+#Note: .logs file will save in root of project directory 
