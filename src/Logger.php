@@ -46,6 +46,11 @@ class Logger extends AbstractLogger
      * Store the logs.
      */
     private $log;
+    /**
+     * Store the file.
+     */
+    private $customFile;	
+	
 
     /**
      * Log.
@@ -78,7 +83,19 @@ class Logger extends AbstractLogger
 
         return  $this->interpolate($message, $context, $level);
     }
-
+    /**
+     * Set the custom file name.
+     *
+     * @param  $file with location/folder
+     *
+     * @return void
+     */	
+	public function setFile($file)
+	{
+		if (!file_exists($file)) {
+			$this->customFile = $file;
+		}	
+	}	
     /**
      * Write the log message in files.
      *
@@ -89,7 +106,11 @@ class Logger extends AbstractLogger
      */
     public function writer($level, $message)
     {
-        $fileName = '../.logs';
+		if (isset($this->customFile) && !empty($this->customFile)) {
+			$fileName = $this->customFile;	
+		} else {
+		    $fileName = '../.logs';	
+		}
         $prepareText = 'Date/time: '.date('Y-m-d h:i:s A')." , Level: $level , message: ".$message."\n";
 		$fh = fopen($fileName,'a+');
 		fwrite($fh,$prepareText);

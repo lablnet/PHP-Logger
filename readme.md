@@ -18,6 +18,9 @@ run this command
 	use Lablnet\Logger;
 	require '../vendor/autoload.php';
 	$logger = new Logger;
+	// If you want set custom file 
+	// prototype: $logger->setFile(filewithpath);
+	// $logger->setFile("../my.logs");
 	$logger->debug("Hi im log msg and im {field}" , ['field' => 'debug']);
 	var_dump($logger->get());
 ```    
@@ -31,5 +34,9 @@ run this command
 - notice => ```$logger->notice(msg,[context])```
 - info => ```$logger->info(msg,[context])```
 - debug => ```$logger->debug(msg,[context])```
+
+## custom file
+For setting your own custom file
+``` $logger->setFile("data/app.logs");  ```
 
 # Note: .logs file will save in root of project directory 
