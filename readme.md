@@ -32,4 +32,4 @@ run this command
 - info => ```$logger->info(msg,[context])```
 - debug => ```$logger->debug(msg,[context])```
 
-#Note: .logs file will save in root of project directory 
+# Note: .logs file will save in root of project directory 
