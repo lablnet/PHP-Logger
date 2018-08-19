@@ -9,7 +9,7 @@ Logging is one of the most ubiquitous tasks encountered in PHP. We use logs to t
 
 ## install
 run this command
-``` composer ```
+``` composer require lablnet/logger ```
 
 ## usage
 
